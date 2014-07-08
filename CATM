@@ -1,0 +1,24 @@
+#include<stdio.h>
+
+int main()
+{
+    int pos[6];
+    int n, m, k;
+    scanf("%d%d%d",&n,&m,&k);
+    for(n=0;n<k;++n)
+    {
+        for(m=0;m<6;++m)
+            scanf("%d",&pos[m]);
+
+        if(((pos[0]-pos[2]>0)&&(pos[0]-pos[4]<0))||((pos[0]-pos[2]<0)&&(pos[0]-pos[4]>0)))
+        {
+            if (((pos[0]-pos[2]==pos[1]-pos[3])&&(pos[0]-pos[4]==pos[1]-pos[5]))||((pos[0]-pos[2]==pos[3]-pos[1])&&(pos[0]-pos[4]==pos[5]-pos[1])))
+            {
+            printf("NO\n");
+            continue;
+            }
+        }
+    printf("YES\n");
+    }
+    return 0;
+}
